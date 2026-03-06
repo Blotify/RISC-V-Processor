@@ -1,0 +1,1866 @@
+RISC-V 64-bit Pipelined Processor Status Log
+=============================================
+
+=== Cycle 1 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000004
+  Instruction: 0x00a00193
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000000
+  IF_ID_Instruction: 0x00500113
+  IF_ID_rs1: x0
+  IF_ID_rs2: x5
+  IF_ID_rd: x2
+
+[DECODE STAGE]
+  Opcode: 0x13
+  rs1: x0, rs2: x5, rd: x2
+  Immediate: 0x0000000000000005
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 1, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000000
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x0, ID_EX_rs2: x0, ID_EX_rd: x0
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000000  x3:0x0000000000000000  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 2 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000008
+  Instruction: 0x003100b3
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000004
+  IF_ID_Instruction: 0x00a00193
+  IF_ID_rs1: x0
+  IF_ID_rs2: x10
+  IF_ID_rd: x3
+
+[DECODE STAGE]
+  Opcode: 0x13
+  rs1: x0, rs2: x10, rd: x3
+  Immediate: 0x000000000000000a
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 1, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000000
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000005
+  ID_EX_rs1: x0, ID_EX_rs2: x5, ID_EX_rd: x2
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000005
+  ALU_Result: 0x0000000000000005
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000000  x3:0x0000000000000000  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 3 ===
+
+[FETCH STAGE]
+  PC: 0x000000000000000c
+  Instruction: 0x40310133
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000008
+  IF_ID_Instruction: 0x003100b3
+  IF_ID_rs1: x2
+  IF_ID_rs2: x3
+  IF_ID_rd: x1
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x2, rs2: x3, rd: x1
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000004
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x000000000000000a
+  ID_EX_rs1: x0, ID_EX_rs2: x10, ID_EX_rd: x3
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0x000000000000000a
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000005
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x2
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x005
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000000  x3:0x0000000000000000  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 4 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000010
+  Instruction: 0x0031f233
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x000000000000000c
+  IF_ID_Instruction: 0x40310133
+  IF_ID_rs1: x2
+  IF_ID_rs2: x3
+  IF_ID_rd: x2
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x2, rs2: x3, rd: x2
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x0000000000000005, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000008
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x2, ID_EX_rs2: x3, ID_EX_rd: x1
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 1, ForwardB: 2
+  ALU_A: 0x0000000000000005
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0x000000000000000f
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000a
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x3
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x00a
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000005
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x2
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000005
+  Write to Register x2
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000000  x3:0x0000000000000000  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 5 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000014
+  Instruction: 0x0041f2b3
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000010
+  IF_ID_Instruction: 0x0031f233
+  IF_ID_rs1: x3
+  IF_ID_rs2: x3
+  IF_ID_rd: x4
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x3, rs2: x3, rd: x4
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x000000000000000a
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x000000000000000c
+  ID_EX_rs1_data: 0x0000000000000005
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x2, ID_EX_rs2: x3, ID_EX_rd: x2
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x8
+  ForwardA: 0, ForwardB: 1
+  ALU_A: 0x0000000000000005
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0xfffffffffffffffb
+  Zero: 0, Carry: 1, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000f
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x1
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x00f
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000a
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x3
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000a
+  Write to Register x3
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000005  x3:0x0000000000000000  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 6 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000018
+  Instruction: 0x00416333
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000014
+  IF_ID_Instruction: 0x0041f2b3
+  IF_ID_rs1: x3
+  IF_ID_rs2: x4
+  IF_ID_rd: x5
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x3, rs2: x4, rd: x5
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000010
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x000000000000000a
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x3, ID_EX_rs2: x3, ID_EX_rd: x4
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x7
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0x000000000000000a
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xfffffffffffffffb
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x2
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x3fb
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000f
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x1
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000f
+  Write to Register x1
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x0000000000000000  x2:0x0000000000000005  x3:0x000000000000000a  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 7 ===
+
+[FETCH STAGE]
+  PC: 0x000000000000001c
+  Instruction: 0x003163b3
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000018
+  IF_ID_Instruction: 0x00416333
+  IF_ID_rs1: x2
+  IF_ID_rs2: x4
+  IF_ID_rd: x6
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x2, rs2: x4, rd: x6
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0xfffffffffffffffb, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000014
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x3, ID_EX_rs2: x4, ID_EX_rd: x5
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x7
+  ForwardA: 0, ForwardB: 2
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0x000000000000000a
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000a
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x4
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x00a
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0xfffffffffffffffb
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x2
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xfffffffffffffffb
+  Write to Register x2
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0x0000000000000005  x3:0x000000000000000a  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 8 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000020
+  Instruction: 0x0012b023
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x000000000000001c
+  IF_ID_Instruction: 0x003163b3
+  IF_ID_rs1: x2
+  IF_ID_rs2: x3
+  IF_ID_rd: x7
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x2, rs2: x3, rd: x7
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0xfffffffffffffffb, Read_Data2: 0x000000000000000a
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000018
+  ID_EX_rs1_data: 0xfffffffffffffffb
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x2, ID_EX_rs2: x4, ID_EX_rd: x6
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x6
+  ForwardA: 0, ForwardB: 1
+  ALU_A: 0xfffffffffffffffb
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0xfffffffffffffffb
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000a
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x5
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x00a
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000a
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x4
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000a
+  Write to Register x4
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x0000000000000000  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 9 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000024
+  Instruction: 0x0002b503
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000020
+  IF_ID_Instruction: 0x0012b023
+  IF_ID_rs1: x5
+  IF_ID_rs2: x1
+  IF_ID_rd: x0
+
+[DECODE STAGE]
+  Opcode: 0x23
+  rs1: x5, rs2: x1, rd: x0
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 1
+  Branch: 0, ALUSrc: 1, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x000000000000000f
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x000000000000001c
+  ID_EX_rs1_data: 0xfffffffffffffffb
+  ID_EX_rs2_data: 0x000000000000000a
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x2, ID_EX_rs2: x3, ID_EX_rd: x7
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x6
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0xfffffffffffffffb
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0xfffffffffffffffb
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xfffffffffffffffb
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x6
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x3fb
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000a
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x5
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000a
+  Write to Register x5
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x0000000000000000  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 10 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000028
+  Instruction: 0x0062bc23
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000024
+  IF_ID_Instruction: 0x0002b503
+  IF_ID_rs1: x5
+  IF_ID_rs2: x0
+  IF_ID_rd: x10
+
+[DECODE STAGE]
+  Opcode: 0x03
+  rs1: x5, rs2: x0, rd: x10
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 1, MemWrite: 0
+  Branch: 0, ALUSrc: 1, MemtoReg: 1
+  ALUOp: 0
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000020
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x000000000000000f
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x5, ID_EX_rs2: x1, ID_EX_rd: x0
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 1
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x000000000000000a
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xfffffffffffffffb
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x7
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x3fb
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0xfffffffffffffffb
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x6
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xfffffffffffffffb
+  Write to Register x6
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0x0000000000000000  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 11 ===
+
+[FETCH STAGE]
+  PC: 0x000000000000002c
+  Instruction: 0x0182b583
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000028
+  IF_ID_Instruction: 0x0062bc23
+  IF_ID_rs1: x5
+  IF_ID_rs2: x6
+  IF_ID_rd: x24
+
+[DECODE STAGE]
+  Opcode: 0x23
+  rs1: x5, rs2: x6, rd: x24
+  Immediate: 0x0000000000000018
+  RegWrite: 0, MemRead: 0, MemWrite: 1
+  Branch: 0, ALUSrc: 1, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0x000000000000000a, Read_Data2: 0xfffffffffffffffb
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000024
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x5, ID_EX_rs2: x0, ID_EX_rd: x10
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 1, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 1
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x000000000000000a
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000a
+  EX_MEM_rs2_data (write_data): 0x000000000000000f
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 1
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x00a
+  Write_Data: 0x000000000000000f
+  MemRead: 0, MemWrite: 1
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0xfffffffffffffffb
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x7
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xfffffffffffffffb
+  Write to Register x7
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0x0000000000000000  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 12 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000030
+  Instruction: 0x00520463
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x000000000000002c
+  IF_ID_Instruction: 0x0182b583
+  IF_ID_rs1: x5
+  IF_ID_rs2: x24
+  IF_ID_rd: x11
+
+[DECODE STAGE]
+  Opcode: 0x03
+  rs1: x5, rs2: x24, rd: x11
+  Immediate: 0x0000000000000018
+  RegWrite: 1, MemRead: 1, MemWrite: 0
+  Branch: 0, ALUSrc: 1, MemtoReg: 1
+  ALUOp: 0
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000028
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0xfffffffffffffffb
+  ID_EX_imm: 0x0000000000000018
+  ID_EX_rs1: x5, ID_EX_rs2: x6, ID_EX_rd: x24
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 1
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x0000000000000018
+  ALU_Result: 0x0000000000000022
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000000a
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x10
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 1, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 1
+
+[MEMORY STAGE]
+  Address: 0x00a
+  Write_Data: 0x0000000000000000
+  MemRead: 1, MemWrite: 0
+  Read_Data: 0x000000000000000f
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000a
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000a
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 13 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000034
+  Instruction: 0x00000063
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000030
+  IF_ID_Instruction: 0x00520463
+  IF_ID_rs1: x4
+  IF_ID_rs2: x5
+  IF_ID_rd: x8
+
+[DECODE STAGE]
+  Opcode: 0x63
+  rs1: x4, rs2: x5, rd: x8
+  Immediate: 0x0000000000000008
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 1, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 1
+  Read_Data1: 0x000000000000000a, Read_Data2: 0x000000000000000a
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x000000000000002c
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000018
+  ID_EX_rs1: x5, ID_EX_rs2: x24, ID_EX_rd: x11
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 1, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 1, ID_EX_MemtoReg: 1
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x0000000000000018
+  ALU_Result: 0x0000000000000022
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000022
+  EX_MEM_rs2_data (write_data): 0xfffffffffffffffb
+  EX_MEM_rd: x24
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 1
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x022
+  Write_Data: 0xfffffffffffffffb
+  MemRead: 0, MemWrite: 1
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000000a
+  MEM_WB_mem_data: 0x000000000000000f
+  MEM_WB_rd: x10
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 1
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000000f
+  Write to Register x10
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x0000000000000000  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 14 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000038
+  Instruction: 0x00a086b3
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000034
+  IF_ID_Instruction: 0x00000063
+  IF_ID_rs1: x0
+  IF_ID_rs2: x0
+  IF_ID_rd: x0
+
+[DECODE STAGE]
+  Opcode: 0x63
+  rs1: x0, rs2: x0, rd: x0
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 1, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 1
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000030
+  ID_EX_rs1_data: 0x000000000000000a
+  ID_EX_rs2_data: 0x000000000000000a
+  ID_EX_imm: 0x0000000000000008
+  ID_EX_rs1: x4, ID_EX_rs2: x5, ID_EX_rd: x8
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 1, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 1
+
+[EXECUTE STAGE]
+  ALU_Control: 0x8
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000a
+  ALU_B: 0x000000000000000a
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000022
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x11
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 1, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 1
+
+[MEMORY STAGE]
+  Address: 0x022
+  Write_Data: 0x0000000000000000
+  MemRead: 1, MemWrite: 0
+  Read_Data: 0xfffffffffffffffb
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000022
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x24
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000022
+  Write to Register x24
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 15 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000040
+  Instruction: 0x00000033
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000038
+  IF_ID_Instruction: 0x00a086b3
+  IF_ID_rs1: x1
+  IF_ID_rs2: x10
+  IF_ID_rd: x13
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x1, rs2: x10, rd: x13
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x000000000000000f, Read_Data2: 0x000000000000000f
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000000
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x0, ID_EX_rs2: x0, ID_EX_rd: x0
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x000000000000000a
+  EX_MEM_rd: x8
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x000000000000000a
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000022
+  MEM_WB_mem_data: 0xfffffffffffffffb
+  MEM_WB_rd: x11
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 1
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xfffffffffffffffb
+  Write to Register x11
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0x0000000000000000  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 16 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000044
+  Instruction: 0x00000033
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000040
+  IF_ID_Instruction: 0x00000033
+  IF_ID_rs1: x0
+  IF_ID_rs2: x0
+  IF_ID_rd: x0
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x0, rs2: x0, rd: x0
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000038
+  ID_EX_rs1_data: 0x000000000000000f
+  ID_EX_rs2_data: 0x000000000000000f
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x1, ID_EX_rs2: x10, ID_EX_rd: x13
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x000000000000000f
+  ALU_B: 0x000000000000000f
+  ALU_Result: 0x000000000000001e
+  Zero: 0, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x8
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x8
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 17 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000048
+  Instruction: 0x00000033
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000044
+  IF_ID_Instruction: 0x00000033
+  IF_ID_rs1: x0
+  IF_ID_rs2: x0
+  IF_ID_rd: x0
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x0, rs2: x0, rd: x0
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000040
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x0, ID_EX_rs2: x0, ID_EX_rd: x0
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x000000000000001e
+  EX_MEM_rs2_data (write_data): 0x000000000000000f
+  EX_MEM_rd: x13
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x01e
+  Write_Data: 0x000000000000000f
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 18 ===
+
+[FETCH STAGE]
+  PC: 0x000000000000004c
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000048
+  IF_ID_Instruction: 0x00000033
+  IF_ID_rs1: x0
+  IF_ID_rs2: x0
+  IF_ID_rd: x0
+
+[DECODE STAGE]
+  Opcode: 0x33
+  rs1: x0, rs2: x0, rd: x0
+  Immediate: 0x0000000000000000
+  RegWrite: 1, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 2
+  Read_Data1: 0x0000000000000000, Read_Data2: 0x0000000000000000
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000044
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x0, ID_EX_rs2: x0, ID_EX_rd: x0
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x000000000000001e
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x13
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x000000000000001e
+  Write to Register x13
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x0000000000000000  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 19 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000050
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x000000000000004c
+  IF_ID_Instruction: 0xxxxxxxxx
+  IF_ID_rs1: xx
+  IF_ID_rs2: xx
+  IF_ID_rd: xx
+
+[DECODE STAGE]
+  Opcode: 0xxx
+  rs1: xx, rs2: xx, rd: xx
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0xxxxxxxxxxxxxxxxx, Read_Data2: 0xxxxxxxxxxxxxxxxx
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000048
+  ID_EX_rs1_data: 0x0000000000000000
+  ID_EX_rs2_data: 0x0000000000000000
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: x0, ID_EX_rs2: x0, ID_EX_rd: x0
+  ID_EX_RegWrite: 1, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 2
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0x0000000000000000
+  ALU_B: 0x0000000000000000
+  ALU_Result: 0x0000000000000000
+  Zero: 1, Carry: 0, Overflow: 0
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x000000000000001e  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 20 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000054
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000050
+  IF_ID_Instruction: 0xxxxxxxxx
+  IF_ID_rs1: xx
+  IF_ID_rs2: xx
+  IF_ID_rd: xx
+
+[DECODE STAGE]
+  Opcode: 0xxx
+  rs1: xx, rs2: xx, rd: xx
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0xxxxxxxxxxxxxxxxx, Read_Data2: 0xxxxxxxxxxxxxxxxx
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x000000000000004c
+  ID_EX_rs1_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_rs2_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: xx, ID_EX_rs2: xx, ID_EX_rd: xx
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0xxxxxxxxxxxxxxxxx
+  ALU_B: 0xxxxxxxxxxxxxxxxx
+  ALU_Result: 0xxxxxxxxxxxxxxxxx
+  Zero: x, Carry: x, Overflow: x
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0x0000000000000000
+  EX_MEM_rs2_data (write_data): 0x0000000000000000
+  EX_MEM_rd: x0
+  EX_MEM_RegWrite: 1, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0x000
+  Write_Data: 0x0000000000000000
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x000000000000001e  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 21 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000058
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000054
+  IF_ID_Instruction: 0xxxxxxxxx
+  IF_ID_rs1: xx
+  IF_ID_rs2: xx
+  IF_ID_rd: xx
+
+[DECODE STAGE]
+  Opcode: 0xxx
+  rs1: xx, rs2: xx, rd: xx
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0xxxxxxxxxxxxxxxxx, Read_Data2: 0xxxxxxxxxxxxxxxxx
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000050
+  ID_EX_rs1_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_rs2_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: xx, ID_EX_rs2: xx, ID_EX_rd: xx
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0xxxxxxxxxxxxxxxxx
+  ALU_B: 0xxxxxxxxxxxxxxxxx
+  ALU_Result: 0xxxxxxxxxxxxxxxxx
+  Zero: x, Carry: x, Overflow: x
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rs2_data (write_data): 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rd: xx
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0xxxx
+  Write_Data: 0xxxxxxxxxxxxxxxxx
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0x0000000000000000
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: x0
+  MEM_WB_RegWrite: 1, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0x0000000000000000
+  Write to Register x0
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x000000000000001e  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 22 ===
+
+[FETCH STAGE]
+  PC: 0x000000000000005c
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x0000000000000058
+  IF_ID_Instruction: 0xxxxxxxxx
+  IF_ID_rs1: xx
+  IF_ID_rs2: xx
+  IF_ID_rd: xx
+
+[DECODE STAGE]
+  Opcode: 0xxx
+  rs1: xx, rs2: xx, rd: xx
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0xxxxxxxxxxxxxxxxx, Read_Data2: 0xxxxxxxxxxxxxxxxx
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000054
+  ID_EX_rs1_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_rs2_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: xx, ID_EX_rs2: xx, ID_EX_rd: xx
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0xxxxxxxxxxxxxxxxx
+  ALU_B: 0xxxxxxxxxxxxxxxxx
+  ALU_Result: 0xxxxxxxxxxxxxxxxx
+  Zero: x, Carry: x, Overflow: x
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rs2_data (write_data): 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rd: xx
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0xxxx
+  Write_Data: 0xxxxxxxxxxxxxxxxx
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0xxxxxxxxxxxxxxxxx
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: xx
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xxxxxxxxxxxxxxxxx
+  Write to Register xx
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x000000000000001e  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
+=== Cycle 23 ===
+
+[FETCH STAGE]
+  PC: 0x0000000000000060
+  Instruction: 0xxxxxxxxx
+
+[IF/ID Pipeline Register]
+  IF_ID_PC: 0x000000000000005c
+  IF_ID_Instruction: 0xxxxxxxxx
+  IF_ID_rs1: xx
+  IF_ID_rs2: xx
+  IF_ID_rd: xx
+
+[DECODE STAGE]
+  Opcode: 0xxx
+  rs1: xx, rs2: xx, rd: xx
+  Immediate: 0x0000000000000000
+  RegWrite: 0, MemRead: 0, MemWrite: 0
+  Branch: 0, ALUSrc: 0, MemtoReg: 0
+  ALUOp: 0
+  Read_Data1: 0xxxxxxxxxxxxxxxxx, Read_Data2: 0xxxxxxxxxxxxxxxxx
+
+[ID/EX Pipeline Register]
+  ID_EX_PC: 0x0000000000000058
+  ID_EX_rs1_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_rs2_data: 0xxxxxxxxxxxxxxxxx
+  ID_EX_imm: 0x0000000000000000
+  ID_EX_rs1: xx, ID_EX_rs2: xx, ID_EX_rd: xx
+  ID_EX_RegWrite: 0, ID_EX_MemRead: 0, ID_EX_MemWrite: 0
+  ID_EX_Branch: 0, ID_EX_ALUSrc: 0, ID_EX_MemtoReg: 0
+  ID_EX_ALUOp: 0
+
+[EXECUTE STAGE]
+  ALU_Control: 0x0
+  ForwardA: 0, ForwardB: 0
+  ALU_A: 0xxxxxxxxxxxxxxxxx
+  ALU_B: 0xxxxxxxxxxxxxxxxx
+  ALU_Result: 0xxxxxxxxxxxxxxxxx
+  Zero: x, Carry: x, Overflow: x
+
+[EX/MEM Pipeline Register]
+  EX_MEM_alu_result: 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rs2_data (write_data): 0xxxxxxxxxxxxxxxxx
+  EX_MEM_rd: xx
+  EX_MEM_RegWrite: 0, EX_MEM_MemRead: 0, EX_MEM_MemWrite: 0
+  EX_MEM_MemtoReg: 0
+
+[MEMORY STAGE]
+  Address: 0xxxx
+  Write_Data: 0xxxxxxxxxxxxxxxxx
+  MemRead: 0, MemWrite: 0
+  Read_Data: 0x0000000000000000
+
+[MEM/WB Pipeline Register]
+  MEM_WB_alu_result: 0xxxxxxxxxxxxxxxxx
+  MEM_WB_mem_data: 0x0000000000000000
+  MEM_WB_rd: xx
+  MEM_WB_RegWrite: 0, MEM_WB_MemtoReg: 0
+
+[WRITE BACK STAGE]
+  Write_Back_Data: 0xxxxxxxxxxxxxxxxx
+  Write to Register xx
+
+[REGISTER FILE]
+  x0:0x0000000000000000  x1:0x000000000000000f  x2:0xfffffffffffffffb  x3:0x000000000000000a  
+  x4:0x000000000000000a  x5:0x000000000000000a  x6:0xfffffffffffffffb  x7:0xfffffffffffffffb  
+  x8:0x0000000000000000  x9:0x0000000000000000  x10:0x000000000000000f  x11:0xfffffffffffffffb  
+  x12:0x0000000000000000  x13:0x000000000000001e  x14:0x0000000000000000  x15:0x0000000000000000  
+  x16:0x0000000000000000  x17:0x0000000000000000  x18:0x0000000000000000  x19:0x0000000000000000  
+  x20:0x0000000000000000  x21:0x0000000000000000  x22:0x0000000000000000  x23:0x0000000000000000  
+  x24:0x0000000000000000  x25:0x0000000000000000  x26:0x0000000000000000  x27:0x0000000000000000  
+  x28:0x0000000000000000  x29:0x0000000000000000  x30:0x0000000000000000  x31:0x0000000000000000  
+
+[HAZARD CONTROL SIGNALS]
+  pc_write: 1
+  hazard_if_id_write: 1
+  control_mux_sel: 0
+  hazard_flush: 0
+
+----------------------------------------
+
